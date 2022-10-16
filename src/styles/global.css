@@ -1,0 +1,12 @@
+:root {
+    /* Colors */
+    --pageBackground: #fff;
+    --contrastBackground: #444;
+    --textPrimary: #444;
+    --textSecondary: #666;
+    --textContrast: #fff;
+    --borderRadiusSmall: 0.25rem;
+    --borderRadiusLarge: 0.75rem;
+    --overlayBackground: rgba(0,0,0,0.5);
+}
+

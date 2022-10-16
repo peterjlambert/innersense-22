@@ -1,0 +1,62 @@
+---
+import LogoBadge from "./LogoBadge.astro";
+import Wrapper from "./Wrapper.astro";
+
+
+---
+<div class="siteFooter">
+    <Wrapper>
+        <nav aria-label="Secondary navigation" class="siteFooter__layout">
+            <ul>
+                <li><a href="#">Link Title</a></li>
+                <li><a href="#">Link Title</a></li>
+                <li><a href="#">Link Title</a></li>
+                <li><a href="#">Link Title</a></li>
+                <li><a href="#">Link Title</a></li>
+                <li><a href="#">Link Title</a></li>
+                <li><a href="#">Link Title</a></li>
+            </ul>
+            <ul>
+                <li><a href="#">Link Title</a></li>
+                <li><a href="#">Link Title</a></li>
+                <li><a href="#">Link Title</a></li>
+                <li><a href="#">Link Title</a></li>
+            </ul>
+            <div class="siteFooter__badge">
+                <LogoBadge />
+            </div>
+        </nav>
+    </Wrapper>
+</div>
+
+<style>
+    .siteFooter {
+        background-color: var(--contrastBackground);
+        color: var(--textContrast);
+        font-size: var(--fontSizeS);
+    }
+    a {
+        color: var(--textContrast);
+        text-decoration: none;
+        transition: .7s ease-in-out all;
+    }
+    a:hover {
+        text-decoration: underline;
+    }
+    ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+    .siteFooter__layout {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(30rem, 1fr));
+        gap: 1.6rem;
+        width: 100%;
+    }
+    .siteFooter__badge {
+        display: flex;
+        justify-content: center;
+    }
+
+</style>

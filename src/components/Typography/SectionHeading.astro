@@ -1,0 +1,15 @@
+---
+export interface Props {
+	title: string;
+    color?: string;
+}
+
+const { title, color } = Astro.props;
+---
+<h2>
+    {title}
+</h2>
+<style>
+    font-size: var(--fontSizeLg);
+    text-transform: uppercase;
+</style>

@@ -1,0 +1,32 @@
+---
+import '../styles/global.css';
+import Layout from '../layouts/Layout.astro';
+import Hero from '../components/Hero.astro';
+import SiteHeader from '../components/SiteHeader.astro';
+import ContentBlock from '../components/ContentBlock.astro';
+import RelationGrid from '../components/RelationGrid.astro';
+import ButtonLink from '../components/ButtonLink.astro';
+import Card from '../components/Card.astro';
+import SectionHeading from '../components/Typography/SectionHeading.astro';
+---
+
+<Layout title="Innersense Aesthetics Medical">
+	<Hero imageSrc="'https://images.unsplash.com/photo-1663868438864-dc0be78206d8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8'" />
+	<RelationGrid title="Treatments We Offer">
+		<Card title="Treatment Name" imgSrc="" href="#" />
+		<Card title="Treatment Name" imgSrc="" href="#" />
+		<Card title="Treatment Name" imgSrc="" href="#" />
+		<Card title="Treatment Name" imgSrc="" href="#" />
+		<Card title="Treatment Name" imgSrc="" href="#" />
+		<Card title="Treatment Name" imgSrc="" href="#" />
+	</RelationGrid>
+	<ContentBlock>
+		<SectionHeading title="The Patient Journey" />
+		<p>Innersense Aesthetics is one of the leading Nurse-led Aesthetic clinics in Yorkshire. Both our York & Wetherby clinics pride themselves on providing treatments that are holistic and promote the health interests of their patients.</p>
+		<ButtonLink href="/patient-journey" label="Learn more about the patient experience"/>
+	</ContentBlock>
+</Layout>
+
+<style>
+	
+</style>

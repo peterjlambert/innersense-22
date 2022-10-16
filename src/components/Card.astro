@@ -1,0 +1,71 @@
+---
+export interface Props {
+	title: string;
+	body?: string;
+	imgSrc?: string;
+	href: string;
+}
+
+const { href, title, body } = Astro.props;
+---
+
+<div class="linkCard">
+	<a href={href}>
+		<div class="linkCard__content">
+			<h3>
+				{title}
+			</h3>
+			{body && <p>{body}</p>}
+		</div>
+	</a>
+</div>
+<style>
+	.linkCard {
+		background-color: rgba(0,0,0,.25);
+		background-image: var(--link-gradient);
+		background-size: cover;
+		border-radius: 0.5rem;
+		background-position: 100%;
+		transition: background-position 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+	}
+
+	.linkCard > a {
+		display: flex;
+		align-items: flex-end;
+		height: 100%;
+		width: 100%;
+		text-decoration: none;
+		color: var(--text-color);
+		opacity: 0.8;
+	}
+	.linkCard__content {
+		align-self: flex-end;
+		background-color: rgba(0,0,0,.5);
+		border-bottom-left-radius: 0.5rem;
+		border-bottom-right-radius: 0.5rem;
+		color: #fff;
+		padding: .5rem 1rem;
+		width: 100%;
+		transition: .3s ease all;
+	}
+	.linkCard:is(:hover, :focus-within) .linkCard__content {
+		background-color: rgba(0,0,0,1);
+	}
+
+	h3 {
+		margin: 0;
+		transition: color 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+		line-height: 1;
+		padding: .5rem 1rem;
+	}
+
+	p {
+		margin: 0;
+		padding-bottom: .5rem;
+	}
+
+	.linkCard:is(:hover, :focus-within) {
+		background-position: 0;
+	}
+
+</style>

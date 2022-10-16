@@ -1,0 +1,28 @@
+---
+export interface Props {
+	title?: string;
+	imageSrc: string;
+}
+const { title, imageSrc } = Astro.props;
+---
+<div class="hero" background-image={{imageSrc}}>
+    {{imageSrc}}
+    {title && <h1>{title}</h1>}
+</div>
+
+
+<style define:vars={{ imageSrc }}>
+    .hero {
+        background-color: var(--contrastBackground);
+        background-image: var(--imageSrc);
+        background-size: cover;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 40vh;
+        width: 100%;
+    }
+    &:before {
+        content: var(--imageSrc);
+    }
+</style>

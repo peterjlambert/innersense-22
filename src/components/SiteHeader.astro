@@ -1,0 +1,49 @@
+---
+import ButtonLink from './ButtonLink.astro';
+import LogoType from './LogoType.astro';
+import Wrapper from './Wrapper.astro';
+
+export interface Props {}
+
+const {  } = Astro.props;
+---
+
+<div class="SiteHeader">
+    <Wrapper>
+        <a href="/" class="SiteHeader__homelink">
+            <LogoType />          
+        </a>
+        <div class="SiteHeader__nav">
+            <ButtonLink href="/contact" label="Contact Us" />
+        </div>
+    </Wrapper>
+</div>
+
+
+<style>
+    .SiteHeader {
+        align-items: center;
+        display: flex;
+        justify-content: center;
+        position: relative;
+    }
+    a {
+        line-height: 1;
+    }
+    
+    .SiteHeader__nav {
+        align-items: center;
+        justify-self: flex-end;
+        flex: 0 0 auto;
+        display: flex;
+        justify-content: flex-end;
+    }
+    @media screen and ( min-width: 1000px ) {
+        .SiteHeader__nav {
+            position: absolute;
+            top: 0;
+            right: 2rem;
+            bottom: 0;
+        }
+    }
+</style>

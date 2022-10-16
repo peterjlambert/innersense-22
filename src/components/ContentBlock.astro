@@ -1,0 +1,18 @@
+---
+import Wrapper from "./Wrapper.astro";
+---
+
+<Wrapper>
+    <div class="contentBlock">
+        <slot/>
+    </div>
+</Wrapper>
+
+<style>
+    .contentBlock {
+        max-width: var(--wrapperWidthInner);
+    }
+    .button {
+        justify-self: center;
+    }
+</style>

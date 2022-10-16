@@ -1,0 +1,41 @@
+---
+// import './global.css';
+
+export interface Props {
+	label: string;
+	href: string;
+}
+
+const { label, href, variant } = Astro.props;
+---
+
+<a href={href} class="button">{label}</a>
+
+<style>
+	:root {
+		--buttonColor: #444;
+		--buttonText: #fff;
+		--buttonHover: #567977;
+		--buttonActive: #222;
+	}
+	.button{
+		background-color: var(--buttonColor);
+		border-radius: .5rem;
+		color: var(--buttonText);
+		display: inline-flex;
+		font-size: var(--fontSizeS);
+		font-weight: 600;
+		padding: 0.5rem 1.5rem;
+		text-transform: uppercase;
+		text-decoration: none;
+		text-align: center;
+		transition: .3s ease-in-out all;
+		margin: 0 auto;
+	}
+	.button:is(:hover, :focus){
+		background-color: var(--buttonHover);
+	}
+	.button:is(:active){
+		background-color: var(--buttonActive);
+	}
+</style>

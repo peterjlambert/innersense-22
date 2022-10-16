@@ -1,0 +1,25 @@
+---
+
+---
+
+<div class="wrapper">
+    <div>
+        <slot />
+    </div>
+</div>
+
+<style>
+    .wrapper {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 8rem 2rem;
+    }
+    .wrapper > div {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: min(var(--wrapperWidth), calc(100vw - 4rem));
+    }
+</style>
