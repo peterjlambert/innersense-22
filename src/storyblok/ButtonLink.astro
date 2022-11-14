@@ -1,15 +1,13 @@
 ---
-// import './global.css';
+import { storyblokEditable, renderRichText } from '@storyblok/astro'
 
-export interface Props {
-	label: string;
-	href: string;
-}
+const { blok } = Astro.props
+const content = renderRichText(blok.content)
 
-const { label, href, variant } = Astro.props;
+
 ---
 
-<a href={href} class="button">{label}</a>
+<a href={blok.linkUrl} class="button" {...storyblokEditable(blok)}>{blok.linkLabel}</a>
 
 <style>
 	:root {

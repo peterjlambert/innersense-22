@@ -1,17 +1,16 @@
 ---
-export interface Props {
-	title?: string;
-	imageSrc: string;
-}
-const { title, imageSrc } = Astro.props;
+import { storyblokEditable, renderRichText } from '@storyblok/astro';
+
+const { blok } = Astro.props;
+const content = renderRichText(blok.content);
 ---
-<div class="hero" background-image={{imageSrc}}>
-    {{imageSrc}}
-    {title && <h1>{title}</h1>}
+<div class="hero" {...storyblokEditable(blok)}>
+    {blok.title && <h1>{blok.title}</h1>}
+    {blok.body && <div>{blok.body}</div>}
 </div>
 
 
-<style define:vars={{ imageSrc }}>
+<style define:vars={{ imageSrc: blok.image }}>
     .hero {
         background-color: var(--contrastBackground);
         background-image: var(--imageSrc);

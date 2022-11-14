@@ -1,21 +1,16 @@
 ---
-export interface Props {
-	title: string;
-	body?: string;
-	imgSrc?: string;
-	href: string;
-}
+import { storyblokEditable, renderRichText } from '@storyblok/astro'
 
-const { href, title, body } = Astro.props;
+const { blok } = Astro.props
+const content = renderRichText(blok.content)
 ---
 
-<div class="linkCard">
-	<a href={href}>
+<div class="linkCard" {...storyblokEditable(blok)}>
+	<a href={blok.linkUrl}>
 		<div class="linkCard__content">
-			<h3>
-				{title}
-			</h3>
-			{body && <p>{body}</p>}
+			<div class="linkCard__title">
+				{blok.title}
+			</div>
 		</div>
 	</a>
 </div>
@@ -52,16 +47,11 @@ const { href, title, body } = Astro.props;
 		background-color: rgba(0,0,0,1);
 	}
 
-	h3 {
+	.linkCard__title {
 		margin: 0;
 		transition: color 0.6s cubic-bezier(0.22, 1, 0.36, 1);
 		line-height: 1;
 		padding: .5rem 1rem;
-	}
-
-	p {
-		margin: 0;
-		padding-bottom: .5rem;
 	}
 
 	.linkCard:is(:hover, :focus-within) {

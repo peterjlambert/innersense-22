@@ -1,12 +1,15 @@
 ---
-import Wrapper from "./Wrapper.astro";
-import SectionHeading from "./Typography/SectionHeading.astro";
+import Wrapper from "../components/Wrapper.astro";
+import SectionHeading from "../components/Typography/SectionHeading.astro
 
-const { title } = Astro.props;
+import { storyblokEditable, renderRichText } from '@storyblok/astro'
+
+const { blok } = Astro.props
+const content = renderRichText(blok.content)
 ---
 <div class="relationGrid">
-    <Wrapper>
-        {title && <SectionHeading title={title} />}
+    <Wrapper {...storyblokEditable(blok)}>
+        {blok.title && <SectionHeading title={blok.title} />}
         <div class="grid">
             <slot />
         </div>

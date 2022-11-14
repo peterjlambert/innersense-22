@@ -1,0 +1,24 @@
+---
+import Wrapper from "../components/Wrapper.astro";
+
+import { storyblokEditable, renderRichText } from '@storyblok/astro';
+
+const { blok } = Astro.props;
+const content = renderRichText(blok.content);
+---
+
+<Wrapper>
+    <div class="contentBlock" {...storyblokEditable(blok)}>
+        {blok.title && <h2>{blok.title}</h2>}
+        {blok.body && <div>{blok.body}</div>}
+    </div>
+</Wrapper>
+
+<style>
+    .contentBlock {
+        max-width: var(--wrapperWidthInner);
+    }
+    .button {
+        justify-self: center;
+    }
+</style>
